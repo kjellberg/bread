@@ -3,12 +3,14 @@ cmake_minimum_required(VERSION 2.8.6)
 set(VERSION "0.1")
 # $Format:Packaged from commit %H%nset(COMMIT %h)%nset(REFS "%d")$
 
+set_property(TARGET daemon PROPERTY OUTPUT_NAME "breadd")
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_CONFIGURATION_TYPES Debug RelWithDebInfo Release CACHE TYPE INTERNAL)
 set(CMAKE_SKIP_INSTALL_RULES ON)z
 set(CMAKE_SKIP_PACKAGE_ALL_DEPENDENCY ON)
 set(CMAKE_SUPPRESS_REGENERATION ON)
-set_property(TARGET daemon PROPERTY OUTPUT_NAME "breadd")
+
 enable_testing()
 # copy CTestCustom.cmake to build dir to disable long running tests in 'make test'
 configure_file(${CMAKE_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_BINARY_DIR})
